@@ -6,6 +6,7 @@ import { AuthService } from "../../services/auth.service";
   selector: 'app-logout',
   standalone: true,
   imports: [CommonModule],
+  providers: [AuthService],
   templateUrl: './logout.component.html',
   styleUrl: './logout.component.scss'
 })
