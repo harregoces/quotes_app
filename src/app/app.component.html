@@ -8,20 +8,21 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a routerLink="/" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
               <a routerLink="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white" >Login</a>
-              <a routerLink="/logout" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white">Logout</a>
               <a routerLink="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white">Register</a>
+              <a routerLink="/quotes" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white" [routerLinkActiveOptions]="{exact: true}">Quotes</a>
+              <a routerLink="/quotes/new" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white" [routerLinkActiveOptions]="{exact: true}">Quotes new</a>
               <a routerLink="/reports" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" routerLinkActive="bg-gray-900 text-white">Reports</a>
             </div>
           </div>
         </div>
         <div class="hidden md:block">
           <div class="ml-4 flex items-center md:ml-6">
-            <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <a routerLink="/logout" routerLinkActive="bg-gray-900 text-white" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
               <span class="absolute -inset-1.5"></span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 17H3m14-4l5-5m0 0l-5-5m5 5H3" />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
         <div class="-mr-2 flex md:hidden">
@@ -50,16 +51,18 @@
         <a routerLink="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" routerLinkActive="bg-gray-900 text-white" >Login</a>
         <a routerLink="/logout" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" routerLinkActive="bg-gray-900 text-white">Logout</a>
         <a routerLink="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" routerLinkActive="bg-gray-900 text-white">Register</a>
+        <a routerLink="/quotes" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" routerLinkActive="bg-gray-900 text-white" [routerLinkActiveOptions]="{exact: true}">Quotes</a>
+        <a routerLink="/quotes/new" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" routerLinkActive="bg-gray-900 text-white" [routerLinkActiveOptions]="{exact: true}">Quotes new</a>
         <a routerLink="/reports" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" routerLinkActive="bg-gray-900 text-white">Reports</a>
       </div>
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
-          <button type="button" class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <a routerLink="/logout" routerLinkActive="bg-gray-900 text-white" class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="absolute -inset-1.5"></span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 17H3m14-4l5-5m0 0l-5-5m5 5H3" />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </div>
