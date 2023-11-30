@@ -29,22 +29,25 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.compose([Validators.required, this.customValidator.patternValidator()] )],
       passwordConfirmation: ['', [Validators.required]]
-    }, {validator: this.customValidator.checkPasswords});
+    },
+      {
+        validator: this.customValidator.checkPasswords('password', 'passwordConfirmation')
+    });
   }
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.registerForm.get('email')?.errors?.['email'])
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe(
         (res) => {
           console.log(res);
-          alert('valid form');
-          // TODO: Handle registration success
+          // TODO: redirect to /today
         },
         (err) => {
           console.log(err);
           alert('Invalid form');
-          // TODO: Handle registration error
+          // TODO: Handle registration error in UI
         }
       )
     } else {

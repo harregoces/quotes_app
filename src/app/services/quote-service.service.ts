@@ -25,5 +25,8 @@ export class QuoteServiceService {
     return this.http.get(finalUrl);
   }
 
+  setFavorite(quote: Quote): Observable<any> {
+    return this.http.post(this.apiUrl + '/quotes/favorite', quote);
+  }
 
 }

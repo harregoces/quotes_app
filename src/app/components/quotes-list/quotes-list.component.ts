@@ -13,4 +13,8 @@ export class QuotesListComponent {
 
   @Input() quotesList: Quote[] = [];
 
+  toggleFavorite(quote: Quote) {
+    quote.setQuoteFavorite(!quote.isQuoteFavorite());
+  }
+
 }

@@ -27,9 +27,13 @@
           <!-- error message -->
           <div
             class="mt-1.5 text-red-500 text-sm"
-            *ngIf="(registerForm.get('email')?.touched || submitted) && registerForm.get('email')?.errors?.['required']"
-          >
+            *ngIf="(registerForm.get('email')?.touched || submitted) && registerForm.get('email')?.errors?.['required']" >
             A valid email is required
+          </div>
+          <div
+            class="mt-1.5 text-red-500 text-sm"
+            *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">
+            Enter a valid email address
           </div>
         </div>
       </div>
@@ -45,6 +49,12 @@
             *ngIf="(registerForm.get('password')?.touched || submitted) && registerForm.get('password')?.errors?.['required']"
           >
             Password is required
+          </div>
+          <div
+            class="mt-1.5 text-red-500 text-sm"
+            *ngIf="(registerForm.get('password')?.touched || submitted) && registerForm.get('password')?.errors?.['invalidPassword']"
+          >
+            Password should have minimum 6 characters, at least 1 uppercase letter
           </div>
         </div>
       </div>
@@ -64,7 +74,19 @@
           >
           <div
             class="mt-1.5 text-red-500 text-sm"
-            *ngIf="(registerForm.get('passwordConfirmation')?.touched || submitted) && registerForm.get('passwordConfirmation')?.errors?.['required']"
+            *ngIf="
+            (registerForm.get('passwordConfirmation')?.touched || submitted) &&
+            registerForm.get('passwordConfirmation')?.errors?.['required']
+            "
+          >
+            Password confirmation is required
+          </div>
+          <div
+            class="mt-1.5 text-red-500 text-sm"
+            *ngIf="
+            (registerForm.get('passwordConfirmation')?.touched || submitted) &&
+            registerForm.get('passwordConfirmation')?.errors?.['notSame']
+            "
           >
             Password should match
           </div>
