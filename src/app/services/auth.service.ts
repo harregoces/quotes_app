@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class AuthService {
 
+  private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   login(data: any) {
@@ -25,7 +27,7 @@ export class AuthService {
       password: data.password,
       password_confirmation: data.passwordConfirmation
     }
-    return this.http.post('http://127.0.0.1:8000/api/register', responseBody);
+    return this.http.post(this.apiUrl +  '/register', responseBody);
   }
 
 }

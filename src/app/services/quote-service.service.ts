@@ -9,13 +9,9 @@ import {Observable} from "rxjs";
 })
 export class QuoteServiceService {
 
-  private apiUrl = '';
+  private apiUrl = environment.apiUrl;
 
-  constructor(
-    private http: HttpClient
-  ) {
-    this.apiUrl = environment.apiUrl;
-  }
+  constructor(private http: HttpClient) { }
 
   getQuotes(force: boolean = false): any {
     let finalUrl = this.apiUrl + '/quotes';
@@ -29,4 +25,11 @@ export class QuoteServiceService {
     return this.http.post(this.apiUrl + '/quotes/favorite', quote);
   }
 
+  getTodayQuote(force: boolean = false): any {
+    let finalUrl = this.apiUrl + '/today';
+    if (force) {
+      finalUrl += '?new=true';
+    }
+    return this.http.get(finalUrl);
+  }
 }
